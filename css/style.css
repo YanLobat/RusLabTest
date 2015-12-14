@@ -1,3 +1,34 @@
 .card-img-top{
 	max-width: 100%;
 }
+.card figure{
+	display: inline-block;
+	height: 262px;
+	line-height: 262px;
+}
+.card-title{
+	height: 76px;
+	display: table;
+}
+.card-title a{
+	display: table-cell;
+	vertical-align: middle;
+}
+.card-text{
+	height: 80px;
+}
+.good h1{
+	margin-bottom: 40px;
+}
+.good .col-xs-6>img{
+	max-width: 100%;
+	margin: 0px auto;
+	display: block;
+}
+.mini{
+	text-align: center;
+}
+.mini img{
+	height: 90px;
+	display: inline-block;
+}

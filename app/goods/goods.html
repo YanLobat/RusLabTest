@@ -1,3 +1,8 @@
 <div class="row">
-	<div ui-view></div>
+	<div class="col-xs-12" >
+		<a ui-sref="goods.list" ui-sref-active="btn-primary" class="btn btn-default">Все</a>
+		<a ui-sref="goods.likes" ui-sref-active="btn-primary" class="btn btn-default">Лайки</a>
+		<a ui-sref="goods.dislikes" ui-sref-active="btn-primary" class="btn btn-default">Дизлайки</a>
+	</div>
+	<div autoscroll="true" ui-view></div>
 </div>

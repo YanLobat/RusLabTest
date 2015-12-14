@@ -1,3 +1,29 @@
-<div ng-controller="GoodsItemCtrl as vm">
-		<h1>Hello World</h1>
+<div class="good"  ng-init="vm.getItem();">
+		<h1>{{ vm.item.title }}</h1>
+		<div class="col-xs-6">
+			<img src="{{ vm.item.cover }} " alt="">
+			<div class="mini">
+				<img src="{{mini_img}}" ng-click="vm.setCover(mini_img);" alt="" ng-repeat="mini_img in vm.item.photos">
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<p><b>Лайков:</b> {{ vm.item.likes}}</p>
+			<p><b>Дизлайков:</b> {{ vm.item.dislikes}}</p>
+			<p><b>Описание:</b>{{vm.item.desc}}</p>
+			<div ng-if="vm.item.ordered[0]">
+				<h3>Этот товар заказан</h3>
+			</div>
+			<div>
+				<h3>Варианты приобретения:</h3>
+				<div ng-repeat="offer in vm.item.offers">
+					{{offer.name}} за {{offer.month_price}} руб. <span ng-if="offer.type=='hire'">в месяц</span>
+				</div>
+			</div>
+			<div ng-if="vm.item.shops[0] != ''">
+				<h3>В наличии в магазинах:</h3>
+				<div ng-repeat="shop in vm.item.shops">
+					<a href="{{shop.url}}">в {{shop.name}} за {{shop.price}} руб.</a>
+				</div>
+			</div>
+		</div>
 </div>

@@ -1,10 +1,13 @@
 <div ng-controller="GoodsCtrl as vm" ng-init="vm.getJSON();" >
 		<div class="card col-xs-3" ng-repeat="good in vm.goods">
-		  <img class="card-img-top" src="{{ good.cover}}" alt="Card image cap">
+		  <figure>
+		  	<img class="card-img-top" src="{{ good.cover}}" alt="Card image cap">	
+		  </figure>
 		  <div class="card-block">
-		    <h4 class="card-title">{{good.title}}</h4>
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		    <a ui-sref="goods.item({id:good.id,good:good})" href="#" class="btn btn-primary">Button</a>
+		    <h4 class="card-title"><a ui-sref="goods.item({id:good.id,good:good})">{{good.title}}</a></h4>
+		    <p class="card-text">{{good.desc | limitTo:100}}</p>
+		    <a ng-click="vm.like(good.id)" class="btn btn-primary">Лайк {{good.likes}}</a>
+		    <a ng-click="vm.dislike(good.id)" class="btn btn-danger">Дизлайк {{good.dislikes}}</a>
 		  </div>
 		</div>
 </div>
